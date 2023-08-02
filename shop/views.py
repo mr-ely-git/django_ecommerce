@@ -12,8 +12,8 @@ def footer_component_view(request):
     return render(request, 'footer_component.html')
 
 
-def index_view(request):
-    return render(request, 'index.html')
+def index_page_view(request):
+    return render(request, 'index_page.html')
 
 
 def shop_page_view(request):
@@ -22,3 +22,10 @@ def shop_page_view(request):
         'products': products
     }
     return render(request, 'shop_page.html', context=context)
+
+
+def single_page_view(request, slug):
+    context = {
+        'product': models.Product.objects.get(slug=slug)
+    }
+    return render(request, 'single_product_page.html', context=context)
