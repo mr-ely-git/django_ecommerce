@@ -2,12 +2,12 @@ from django import forms
 
 
 class ContactUsForm(forms.Form):
-    name = forms.CharField(label='نام و نام خانوادگی',
+    subject = forms.CharField(label='موضوع',
                            max_length=100,
                            widget=forms.TextInput(
                                attrs={
                                    'class': 'form-control',
-                                   'placeholder': 'نام خود را وارد کنید'
+                                   'placeholder': 'موضوع پیام خود را وارد کنید'
                                },
                            ))
     email = forms.EmailField(label='ایمیل',

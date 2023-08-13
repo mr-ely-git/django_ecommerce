@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from . import forms
+from . import models
 
 
 def contact_us_view(request):
@@ -13,7 +14,12 @@ def contact_us_view(request):
     if request.method == 'POST':
         contact_us_form = forms.ContactUsForm(request.POST)
         if contact_us_form.is_valid():
-            print(contact_us_form.cleaned_data)
+            contact_model = models.ContactUsForm(
+                email=contact_us_form.cleaned_data.get('email'),
+                subject=contact_us_form.cleaned_data.get('subject'),
+                message=contact_us_form.cleaned_data.get('message'),
+            )
+            contact_model.save()
             return redirect(reverse('index-page-url'))
 
     else:
