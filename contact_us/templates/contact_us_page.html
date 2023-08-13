@@ -14,7 +14,22 @@
                         <div class="status alert alert-success" style="display: none"></div>
                         <form id="main-contact-form" class="contact-form row" name="contact-form" method="post">
                             {% csrf_token %}
-                            {{ form }}
+                            <div class="col-md-6 form-group">
+                            {{ form.email.label }}
+                            {{ form.email }}
+                            {{ form.email.errors }}
+                            </div>
+                            <div class="col-md-6 form-group">
+                            {{ form.name.label }}
+                            {{ form.name }}
+                            {{ form.name.errors }}
+                            </div>
+                            <div class="col-md-12 form-group">
+                            {{ form.message.label }}
+                            {{ form.message }}
+                            {{ form.message.errors }}
+                            </div>
+                            
                             {#                            {% if has_error %}#}
                             {#                            <p class="alert alert-warning">فیلد ایمیل را کامل نمایید</p>#}
                             {#                            {% endif %}#}
