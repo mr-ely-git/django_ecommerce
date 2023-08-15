@@ -1,7 +1,21 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
+from django.views import View
 from . import forms
 from . import models
+
+
+class ContactUsView(View):
+    def get(self, request):
+        contact_us_form = forms.ContactUsModelForm()
+        return render(request, 'contact_us_page.html', {'form': contact_us_form})
+
+    def post(self, request):
+        contact_us_form = forms.ContactUsModelForm(request.POST)
+        if contact_us_form.is_valid():
+            contact_us_form.save()
+            return redirect(reverse('index-page-url'))
+        return render(request, 'contact_us_page.html', {'form': contact_us_form})
 
 
 def contact_us_view(request):
