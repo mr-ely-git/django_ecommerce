@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from . import models
+from django.views.generic import TemplateView
 
 
 # Create your views here.
@@ -12,8 +13,11 @@ def footer_component_view(request):
     return render(request, 'footer_component.html')
 
 
-def index_page_view(request):
-    return render(request, 'index_page.html')
+# def index_page_view(request):
+#     return render(request, 'index_page.html')
+
+class IndexPageView(TemplateView):
+    template_name = 'index_page.html'
 
 
 def shop_page_view(request):
