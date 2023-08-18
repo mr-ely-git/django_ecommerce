@@ -29,6 +29,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=12, decimal_places=2)
     short_description = models.CharField(max_length=400)
     description = models.TextField()
+    image = models.ImageField(upload_to='product-images/', null=True, blank=True)
     slug = models.SlugField(max_length=100, unique=True, allow_unicode=True, db_index=True, blank=True)
     is_publish = models.BooleanField(default=False)
     is_delete = models.BooleanField(default=False)

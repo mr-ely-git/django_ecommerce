@@ -2,7 +2,7 @@
 .vscode/
 # Ignore Python cache files
 __pycache__/
-
+uploaded_files/*
 # Ignore local development settings
 *.pyc
 *.pyo
