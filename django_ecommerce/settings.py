@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shop',
     'contact_us',
+    'user_profile',
     'django_render_partial',
 ]
 
