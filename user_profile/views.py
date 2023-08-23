@@ -20,7 +20,7 @@ class RegisterView(views.View):
             if is_registered:
                 register_form.add_error('email', 'ایمیل قبلا ثبت شده است')
             else:
-                new_user = User(email=email)
+                new_user = User(email=email, username=email, is_active=False)
                 new_user.set_password(password)
                 new_user.save()
                 models.UserInformation.objects.create(user=new_user, email_activation_code=get_random_string(120))
