@@ -39,3 +39,18 @@ class LoginForm(forms.Form):
     password = forms.CharField(label='پسورد',
                                widget=forms.PasswordInput()
                                )
+
+
+class ForgetPasswordForm(forms.Form):
+    email = forms.EmailField(label='ایمیل',
+                             widget=forms.EmailInput()
+                             )
+
+
+class ResetPasswordForm(forms.Form):
+    password = forms.CharField(label='پسورد',
+                               widget=forms.PasswordInput()
+                               )
+    password_confirmation = forms.CharField(label='تکرار پسورد',
+                                            widget=forms.PasswordInput(),
+                                            )
