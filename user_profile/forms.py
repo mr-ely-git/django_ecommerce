@@ -30,3 +30,12 @@ class RegisterForm(forms.Form):
     #     if password and password_confirmation and password != password_confirmation:
     #         raise ValidationError('Passwords do not match.')
     #     return cleaned_data
+
+
+class LoginForm(forms.Form):
+    email = forms.EmailField(label='ایمیل',
+                             widget=forms.EmailInput()
+                             )
+    password = forms.CharField(label='پسورد',
+                               widget=forms.PasswordInput()
+                               )

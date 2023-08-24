@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.urls import reverse
 from django import views
 from django.utils.crypto import get_random_string
 
@@ -24,7 +25,15 @@ class RegisterView(views.View):
                 new_user.set_password(password)
                 new_user.save()
                 models.UserInformation.objects.create(user=new_user, email_activation_code=get_random_string(120))
-                # fixme : create and redirect to login page instead render register_page.html
-                return render(request, 'register_page.html', {'register_form': forms.RegisterForm()})
+
+                return redirect(reverse('login_page_url'))
 
         return render(request, 'register_page.html', {'register_form': register_form})
+
+
+class LoginView(views.View):
+    def get(self, request):
+        return render(request, 'login_page.html', {'login_form': forms.LoginForm()})
+
+    def post(self):
+        pass
