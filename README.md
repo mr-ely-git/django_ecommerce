@@ -2,7 +2,7 @@
 
 ![Project cover](./cover.png)
 
-♨️ **Note:** This project was created by MR. Ely and is currently under active development. 🍃
+♨️ **Note:** This project was created by MR. Ely and is currently under active development.🍃
 
 
 ## Overview
@@ -52,7 +52,7 @@ With django_ecommerce, customers can explore a wide range of products, create ac
 ```
 
 5. **Create a *.env* file and configure environment variables (see *.env.example* for reference).**
-6. ***Apply database migrations:**
+6. **Apply database migrations:**
 ```shell
   python manage.py migrate
 
@@ -121,7 +121,7 @@ With django_ecommerce, customers can explore a wide range of products, create ac
 
 
 ## License
-This project is licensed under the License Name - see the LICENSE.md file for details.
+This project is licensed under the License Name | see the LICENSE.md file for details.
 
 ## Screenshots
 
